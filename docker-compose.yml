@@ -1,0 +1,13 @@
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: voy_tuber
+      MYSQL_ROOT_PASSWORD: ${DEV_DB_PASSWORD}
+    volumes:
+      - voy_tuber_db:/var/lib/mysql
+
+volumes:
+  voy_tuber_db:
